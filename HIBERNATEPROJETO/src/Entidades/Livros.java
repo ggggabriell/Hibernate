@@ -89,13 +89,13 @@ public class Livros {
         this.autor = autor;
     }
      
-    @OneToOne(cascade = javax.persistence.CascadeType.ALL)
-    @JoinColumn(name = "IDFK_Codigo", referencedColumnName = "codigo")
-       public Editora Editora = new Editora();
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Autores")
+    private Autores autor;
     
- 
-    @ManyToMany(mappedBy="cod_")
-    public Autores autores;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Editora")
+    public Editora editora;
 
    public Livros(){}
 }
