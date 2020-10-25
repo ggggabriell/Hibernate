@@ -57,13 +57,14 @@ public class Autores {
         this.email = email;
     }
     
-    @ManyToMany
-    @JoinTable(
-    name="autores_livros",
-    joinColumns={@JoinColumn(name="autores_cod_livros")},
-    inverseJoinColumns={@JoinColumn(name="livros_cod_autores")}
+     
+     
+    @OneToMany(
+        cascade = CascadeType.ALL,
+        orphanRemoval = true
     )
-    public Livros livros;
+    @JoinColumn(name = "Email")
+    public List<Email> email = new ArrayList();
 
     
     
