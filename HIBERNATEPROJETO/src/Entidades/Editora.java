@@ -59,12 +59,9 @@ public class Editora {
     
     public Editora(){}
     
-    @OneToMany(
-    mappedBy = "Editora",
-    cascade = javax.persistence.CascadeType.ALL,
-    orphanRemoval = true
-    )
-    public Livros livros;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Livro")
+    private Livro Livro;
   
     
 }
