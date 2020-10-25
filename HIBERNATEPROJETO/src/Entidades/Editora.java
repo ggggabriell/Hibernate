@@ -61,7 +61,7 @@ public class Editora {
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Livro")
-    private Livro Livro;
+    private Livros Livro;
   
     
 }
