@@ -5,6 +5,7 @@
  */
 package Entidades;
 
+import java.util.List;
 import javax.persistence.*;
 /**
  *
@@ -47,5 +48,12 @@ public class Email {
     public void setCodigo_autor(int codigo_autor) {
         this.codigo_autor = codigo_autor;
     }
+    
+    
+     @OneToMany(
+        cascade = CascadeType.ALL,
+        orphanRemoval = true
+    )
+    private List<Autoesr> codigo_autor;
     
 }
