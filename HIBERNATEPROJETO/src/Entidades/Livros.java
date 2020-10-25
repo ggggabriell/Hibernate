@@ -88,10 +88,10 @@ public class Livros {
     public void setAutor(int autor) {
         this.autor = autor;
     }
-    
-    @ManyToOne
-    @JoinColumn(name="cod_editora")
-    public Editora editoraa;
+     
+    @OneToOne(cascade = javax.persistence.CascadeType.ALL)
+    @JoinColumn(name = "IDFK_Codigo", referencedColumnName = "codigo")
+       public Editora Editora = new Editora();
     
  
     @ManyToMany(mappedBy="cod_")
