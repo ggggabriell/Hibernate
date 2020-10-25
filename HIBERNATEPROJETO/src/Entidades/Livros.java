@@ -91,7 +91,7 @@ public class Livros {
      
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Autores")
-    private Autores autor;
+    public Autores autor;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Editora")
